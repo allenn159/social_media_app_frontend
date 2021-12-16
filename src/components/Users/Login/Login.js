@@ -8,8 +8,8 @@ import useStyles from "./styles";
 const Login = () => {
   const [error, setError] = useState(false);
   const [loginInfo, setLoginInfo] = useState({
-    userName: "",
-    password: "",
+    userName: "demo",
+    password: "00000",
   });
   const classes = useStyles();
   const dispatch = useDispatch();
