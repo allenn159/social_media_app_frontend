@@ -296,6 +296,7 @@ const usersSlices = createSlice({
     builder.addCase(fetchProfileAction.pending, (state, action) => {
       state.loading = true;
       state.appErr = undefined;
+      state.imageErr = undefined;
     });
     builder.addCase(fetchProfileAction.fulfilled, (state, action) => {
       state.profile = action?.payload;
