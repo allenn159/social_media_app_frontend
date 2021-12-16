@@ -96,6 +96,7 @@ export default makeStyles((theme) => ({
   categoryTitle: {
     fontFamily: "Mukta",
     fontSize: "50px",
+    textAlign: "center",
   },
   btn: {
     fontFamily: "Mukta",

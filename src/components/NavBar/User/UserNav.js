@@ -16,6 +16,8 @@ const UserNav = () => {
     setOpenDrawer((openDrawer) => !openDrawer);
   };
 
+  console.log(userAuth._id);
+
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar className={classes.toolBar}>
@@ -56,7 +58,13 @@ const UserNav = () => {
         <Box className={classes.drawerBox}>
           <List className={classes.drawerList}>
             <h2 className={classes.drawerTitle}>uBlog</h2>
-            <Button variant="contained" className={classes.drawerBtn}>
+            <Button
+              component={Link}
+              to={`/profile/${userAuth?._id}`}
+              variant="contained"
+              className={classes.drawerBtn}
+              onClick={onHandleDrawer}
+            >
               Profile
             </Button>
             <Button
