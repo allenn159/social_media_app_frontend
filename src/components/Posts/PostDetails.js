@@ -40,6 +40,18 @@ const PostDetails = () => {
 
   const isCreatedBy = postDetails?.user?._id === userAuth?._id;
 
+  if (post?.appErr)
+    return (
+      <div className={classes.detailsCont}>
+        <Paper
+          className={classes.detailsPaper}
+          style={{ textAlign: "center", fontSize: "30px" }}
+        >
+          Post does not exist!
+        </Paper>
+      </div>
+    );
+
   if (!postDetails)
     return (
       <p
@@ -56,18 +68,6 @@ const PostDetails = () => {
 
   if (post?.isDeleted)
     return <Redirect to={`/category/${postDetails?.category}`} />;
-
-  if (post?.appErr)
-    return (
-      <div className={classes.detailsCont}>
-        <Paper
-          className={classes.detailsPaper}
-          style={{ textAlign: "center", fontSize: "30px" }}
-        >
-          Post does not exist!
-        </Paper>
-      </div>
-    );
 
   return (
     <div className={classes.detailsCont}>

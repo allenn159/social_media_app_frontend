@@ -38,6 +38,18 @@ const Profile = () => {
     };
   }, []);
 
+  if (appErr)
+    return (
+      <Container className={classes.cont} maxWidth="lg">
+        <Paper
+          className={classes.paper}
+          style={{ textAlign: "center", fontSize: "30px" }}
+        >
+          User does not exist!
+        </Paper>
+      </Container>
+    );
+
   if (!profile)
     return (
       <p
@@ -50,18 +62,6 @@ const Profile = () => {
       >
         Loading...
       </p>
-    );
-
-  if (appErr)
-    return (
-      <Container className={classes.cont} maxWidth="lg">
-        <Paper
-          className={classes.paper}
-          style={{ textAlign: "center", fontSize: "30px" }}
-        >
-          User does not exist!
-        </Paper>
-      </Container>
     );
 
   return (
