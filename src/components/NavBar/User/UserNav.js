@@ -16,8 +16,6 @@ const UserNav = () => {
     setOpenDrawer((openDrawer) => !openDrawer);
   };
 
-  console.log(userAuth._id);
-
   return (
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar className={classes.toolBar}>
