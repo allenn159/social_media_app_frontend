@@ -274,12 +274,12 @@ const usersSlices = createSlice({
 
     //Login
     builder.addCase(loginUserAction.pending, (state, action) => {
-      state.loading = true;
+      state.loadingLogin = true;
       state.appErr = undefined;
     });
     builder.addCase(loginUserAction.fulfilled, (state, action) => {
       state.userAuth = action?.payload;
-      state.loading = false;
+      state.loadingLogin = false;
       state.appErr = undefined;
     });
     builder.addCase(loginUserAction.rejected, (state, action) => {

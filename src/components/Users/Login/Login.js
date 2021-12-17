@@ -22,7 +22,7 @@ const Login = () => {
 
   //redirect after login
   const storeData = useSelector((state) => state?.users);
-  const { appErr, userAuth } = storeData;
+  const { appErr, userAuth, loadingLogin } = storeData;
 
   if (userAuth) return <Redirect to={`/profile/${userAuth?._id}`} />;
 
@@ -60,7 +60,9 @@ const Login = () => {
               type="password"
               autoComplete="on"
             />
-
+            <p style={{ fontFamily: "Mukta" }}>
+              {loadingLogin && "Logging in..."}
+            </p>
             <Button
               className={classes.button}
               variant="contained"
