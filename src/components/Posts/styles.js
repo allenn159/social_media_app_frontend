@@ -81,9 +81,7 @@ export default makeStyles((theme) => ({
     fontSize: "20px",
     whiteSpace: "pre-line",
     overflowY: "hidden",
-    [theme.breakpoints.down("sm")]: {
-      maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
-    },
+    maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
   },
   postDate: {
     fontSize: "15px",
