@@ -110,7 +110,7 @@ const PostDetails = () => {
                   dispatch(toggleLikesAction({ postId: postDetails?._id }))
                 }
                 className={
-                  postDetails?.likesCounter > postDetails?.dislikesCounter
+                  postDetails.likes.find((post) => userAuth?._id === post)
                     ? classes.positive
                     : classes.upIcon
                 }
@@ -125,7 +125,7 @@ const PostDetails = () => {
                   dispatch(toggleDislikesAction({ postId: postDetails?._id }))
                 }
                 className={
-                  postDetails?.dislikesCounter > postDetails?.likesCounter
+                  postDetails.disLikes.find((post) => userAuth?._id === post)
                     ? classes.negative
                     : classes.downIcon
                 }

@@ -7,10 +7,11 @@ import {
   toggleLikesAction,
   toggleDislikesAction,
 } from "../../Redux/slices/posts/postSlices";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const PostList = ({ postList }) => {
+  const { _id } = useSelector((state) => state?.users?.userAuth);
   const dispatch = useDispatch();
   const classes = useStyles();
 
@@ -65,7 +66,7 @@ const PostList = ({ postList }) => {
                     dispatch(toggleLikesAction({ postId: el._id }))
                   }
                   className={
-                    el.likesCounter > el.dislikesCounter
+                    el.likes.find((post) => _id === post)
                       ? classes.positive
                       : classes.upIcon
                   }
@@ -80,7 +81,7 @@ const PostList = ({ postList }) => {
                     dispatch(toggleDislikesAction({ postId: el._id }))
                   }
                   className={
-                    el.dislikesCounter > el.likesCounter
+                    el.disLikes.find((post) => _id === post)
                       ? classes.negative
                       : classes.downIcon
                   }
